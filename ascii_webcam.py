@@ -11,7 +11,6 @@ Shading_style = {
         "complex": "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ",
         "test": "#Ww. "
     }
-
 #we define a class for conversion, in this way we can access the attributes of object while our program is running and change certain features
 #like background colour, ascii style
 class Video_to_ASCII:

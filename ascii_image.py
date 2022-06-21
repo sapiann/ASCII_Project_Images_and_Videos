@@ -7,7 +7,7 @@ from cv2 import waitKey
 #to set bg color
 bg_colour = "black" #enter bg colour black or white
 sequence = "complex" #choosing ASCII char sequence, can add more strings of such sequences
-def get_bg(bg = "white"):
+def get_bg(bg = "white"): #FUNCTION to get bg
         if bg == "white":
             return(255,255,255) #255 in case of greyscale
         if bg == "black":

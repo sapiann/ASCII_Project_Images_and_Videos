@@ -46,6 +46,7 @@ class Video_to_ASCII:
             draw=ImageDraw.Draw(img) 
         #the below loop iterates over new_height, new_width to get pixel values at (j,i) location
         #the pixVal gives a single pixel value based on the luminosity operation
+        
             for i in range(new_height):
                 for j in range(new_width):
                     red,green,blue=pixel[j,i]
@@ -58,7 +59,7 @@ class Video_to_ASCII:
     def Get_character(self,p): #to get character based on pixVal value obtained
         charlist=list(self.style)
         charlen=len(charlist)
-        return charlist[math.floor(p*charlen/256)] 
+        return charlist[math.floor(p*charlen/256)]
 
     def reverse_bg(self): #reverses bg and ascii sequence to match with bg if we toggle the bg
         self.bg = not self.bg
