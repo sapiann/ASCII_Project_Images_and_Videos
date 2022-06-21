@@ -5,6 +5,7 @@ import cv2
 import numpy as np
 import math
 
+file = "walking.mp4" #filename
 #shading styles for ASCII characters arranged according to increasing brightness on oppsite bg
 Shading_style = {
         "standard": "@%#*+=-:. ",
@@ -64,7 +65,7 @@ class Video_to_ASCII:
         self.style = self.style[::-1]
 
     def video(self): #function that takes video
-        cap=cv2.VideoCapture("walking") #opens the webcam
+        cap=cv2.VideoCapture(file) #opens the webcam
         print("Instructions:\n"
               "* Press \'q\' at any time to quit video\n"
               "*Press \'+\' or \'-\' to increase or decrease frame window\n"
@@ -75,7 +76,7 @@ class Video_to_ASCII:
             _,img=cap.read() #to read the video
             img=Image.fromarray(img) 
 
-            open_cv_image=np.array(self.imagify(img))#getting output video(array of frames based on video/webcam feed)
+            output=np.array(self.imagify(img))#getting output video(array of frames based on video/webcam feed)
             key=cv2.waitKey(1)
             if key == ord("q"):
                 break
@@ -93,11 +94,11 @@ class Video_to_ASCII:
                 self.scale_factor -=0.01#decrease window size
             #using the above keys we can see the changes in our video in real time
 
-            cv2.imshow("AScii Art",open_cv_image)
+            cv2.imshow("AScii Art",output)
         cap.release()
         cv2.destroyAllWindows()
 
 #main function to call video feed
 if __name__ == "__main__":
-    transformer = Video_to_ASCII( bg=True)
-    transformer.video()
+    convert = Video_to_ASCII( bg=True)
+    convert.video()

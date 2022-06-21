@@ -64,7 +64,7 @@ class Video_to_ASCII:
         self.style = self.style[::-1]
 
     def video(self): #function that takes video
-        cap=cv2.VideoCapture("walking.mp4") #opens the webcam
+        cap=cv2.VideoCapture(0) #opens the webcam
         print("Instructions:\n"
               "* Press \'q\' at any time to quit video\n"
               "*Press \'+\' or \'-\' to increase or decrease frame window\n"
@@ -75,13 +75,13 @@ class Video_to_ASCII:
             _,img=cap.read() #to read the video
             img=Image.fromarray(img) 
 
-            open_cv_image=np.array(self.imagify(img))#getting output video(array of frames based on video/webcam feed)
+            output=np.array(self.imagify(img))#getting output video(array of frames based on video/webcam feed)
             key=cv2.waitKey(1)
             if key == ord("q"):
                 break
-            elif key ==ord("s"):
+            elif key ==ord('s'):
                 self.style = "standard"
-            elif key ==ord("c"):
+            elif key ==ord('c'):
                 self.style = "complex"
             elif key ==ord("t"):
                 self.style = "test"
@@ -93,11 +93,11 @@ class Video_to_ASCII:
                 self.scale_factor -=0.01#decrease window size
             #using the above keys we can see the changes in our video in real time
 
-            cv2.imshow("AScii Art",open_cv_image)
+            cv2.imshow("AScii Art",output)
         cap.release()
         cv2.destroyAllWindows()
 
 #main function to call video feed
 if __name__ == "__main__":
-    transformer = Video_to_ASCII( bg=True)
-    transformer.video()
+    convert = Video_to_ASCII( bg=True)
+    convert.video()
