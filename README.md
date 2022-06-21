@@ -106,4 +106,6 @@ All the mentioned resources have proved helpful in building this project.
 ## Some images we converted
 
 ![Our ASCII ART](https://github.com/sapiann/ASCII_Project_Images_and_Videos/blob/main/images/output_tiger.png)
+![](https://github.com/sapiann/ASCII_Project_Images_and_Videos/blob/main/images/output_greyscale.jpg)
+![](https://github.com/sapiann/ASCII_Project_Images_and_Videos/blob/main/images/output_img1.png)
 
